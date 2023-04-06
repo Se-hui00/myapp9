@@ -311,4 +311,9 @@ public class MemberController {
     return "member/profileEditForm";
   }
 
+  //비밀번호수정
+  @GetMapping("/{memberId}/passwd")
+  public String passwd() {
+    return "member/modifyPwd";
+  }
 }

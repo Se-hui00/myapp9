@@ -14,7 +14,7 @@
       <li class="item">
         <a href="#">menu1</a>
         <ul class="depth2">
-          <li class="item"><a href="#">menu-1</a></li>
+          <li class="item"><a href="#">공지사항</a></li>
           <li class="item"><a href="#">menu-2</a></li>
         </ul>
       </li>
@@ -63,6 +63,9 @@
       </li>
       <li class="item">
         <a th:href="@{/members/{email}/edit(email=${s_email})}">내정보수정</a>
+      </li>
+      <li class="item">
+        <a th:href="@{/members/{email}/passwd(email=${s_email})}">비밀번호수정</a>
       </li>
       <li class="item">
         <a th:href="@{/members/{email}/out(email=${s_email})}">탈퇴</a>
