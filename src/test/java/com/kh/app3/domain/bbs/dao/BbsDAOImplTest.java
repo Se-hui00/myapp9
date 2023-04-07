@@ -1,6 +1,5 @@
 package com.kh.app3.domain.bbs.dao;
 
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
@@ -9,8 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @Slf4j
 @SpringBootTest
@@ -163,10 +160,12 @@ class BbsDAOImplTest {
   @DisplayName("다수의 원글 작성")
   void saveOrigins() {
 
+    String[] category = {"B0101", "B0102", "B0103"};
+
     for(int i=1; i<=244; i++) {
       Bbs bbs = new Bbs();
-
-      bbs.setBcategory("B0103");
+      int idx = (int)(Math.random() * 2) + 1;
+      bbs.setBcategory(category[idx]);
       bbs.setTitle("제목"+i);
       bbs.setEmail("test1@kh.com");
       bbs.setNickname("테스터1");
